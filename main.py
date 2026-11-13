@@ -89,7 +89,7 @@ def think(p):
  try:
   for d in range(1,40):
    v=F(p,-MU,MU,d,0);m=tt[p][3]
-   if n>H/4 or v>ML:break
+   if n>H/4.7 or v>ML:break
  except:pass
  return m
 sq=lambda s:4+ord(s[0])-10*int(s[1])
@@ -102,7 +102,7 @@ def fen(f):
  p=P(rot(b),0,y,x,e and 119-e,0)if a[1]=='b'else P(b,0,x,y,e,0)
  return p._replace(s=sum(Z[x][i]if x.isupper()else-Z[x.upper()][119-i]for i,x in enumerate(p.b)if x.isalpha()))
 post=lambda u,d:json.load(U.urlopen(U.Request(E+u,json.dumps(d).encode(),{'content-type':'application/json'})))
-H=1e5
+H=1.6e5
 while E:
  g=post('/game',{})
  if g['status']=='done':break
